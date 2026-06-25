@@ -273,17 +273,7 @@ const Certifications = () => {
         </p>
       </motion.div>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: 24,
-          maxWidth: 1100,
-          margin: '0 auto',
-          position: 'relative',
-          zIndex: 1,
-        }}
-      >
+      <div className="responsive-grid" style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {certifications.map((cert, index) => (
           <CertCard key={index} cert={cert} index={index} />
         ))}

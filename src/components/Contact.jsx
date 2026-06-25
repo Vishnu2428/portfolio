@@ -145,7 +145,7 @@ const Contact = () => {
         </p>
       </motion.div>
 
-      <div style={styles.splitLayout}>
+      <div className="responsive-split stack-normal">
         {/* Left — Form */}
         <motion.form
           onSubmit={handleSubmit}

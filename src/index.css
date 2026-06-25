@@ -2183,6 +2183,65 @@ section:nth-child(odd) {
   }
 }
 
+/* ——— RESPONSIVE LAYOUT UTILITIES ——— */
+.responsive-split {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 968px) {
+  .responsive-split {
+    flex-direction: column-reverse; /* Text bottom, Image top for Hero */
+    text-align: center;
+    gap: 2rem;
+  }
+  .responsive-split.stack-normal {
+    flex-direction: column; /* Form top, Info bottom for Contact */
+  }
+  .hero-text-col {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .hero-socials {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 1rem !important;
+  }
+  .profile-image-container {
+    width: 280px !important;
+    height: 280px !important;
+  }
+  .navbar-container {
+    padding: 1rem !important;
+  }
+  .navbar-links {
+    gap: 1rem !important;
+    font-size: 0.85rem !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .navbar-logo {
+    margin-bottom: 0.5rem;
+  }
+  .navbar-wrapper {
+    flex-direction: column !important;
+  }
+}
+
 .liquid-orb {
   position: absolute;
   filter: blur(60px);

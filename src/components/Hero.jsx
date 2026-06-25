@@ -187,7 +187,8 @@ const Hero = () => {
           <motion.div
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            style={{ position: 'relative', width: '200px', height: '200px' }}
+            className="profile-image-container"
+            style={{ position: 'relative', width: '250px', height: '250px', margin: '0 auto' }}
           >
             {/* Outer glow rings */}
             {[0, 1, 2].map((ring) => (

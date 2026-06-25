@@ -239,10 +239,8 @@ const About = () => {
 
         {/* ── Grid Layout ── */}
         <div
+          className="responsive-grid"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))',
-            gap: '1.5rem',
             marginBottom: '3rem',
           }}
         >
