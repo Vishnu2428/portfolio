@@ -4,32 +4,32 @@ import { FaBriefcase } from "react-icons/fa";
 
 const experiences = [
   {
-    role: "Full Stack Developer Intern",
-    company: "Tech Solutions Pvt Ltd",
-    period: "Jan 2024 — Present",
+    role: "Founder & Photographer",
+    company: "Luma Photography",
+    period: "Jan 2026 — Present",
     description:
-      "Developed and maintained web applications using React.js and Node.js. Implemented RESTful APIs and database management systems.",
-  },
-  {
-    role: "Web Development Lead",
-    company: "College Tech Club",
-    period: "Jun 2023 — Dec 2023",
-    description:
-      "Led a team of 10 developers in building college management system. Organized workshops and coding events.",
+      "Founded and manage a professional photography business, specializing in portraits, nature, and engagement photography.",
   },
   {
     role: "Freelance Web Developer",
     company: "Self-Employed",
-    period: "Jan 2023 — May 2023",
+    period: "2025 — Present",
     description:
-      "Designed and developed responsive websites for local businesses. Implemented modern UI/UX practices.",
+      "Designed and developed responsive websites and web applications for various clients. Focus on modern UI/UX and clean architecture.",
+  },
+  {
+    role: "Emerging Technologies Intern (AI & Cloud)",
+    company: "IBM (via Edunet Foundation)",
+    period: "Previous",
+    description:
+      "Gained hands-on practical experience in emerging technologies, specifically focusing on Artificial Intelligence and Cloud computing solutions.",
   },
 ];
 
 const Experience = () => {
   return (
     <section id="experience" style={styles.section}>
-      <div style={styles.bgOrb} />
+      <div className="liquid-orb" style={styles.bgOrb} />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -129,7 +129,6 @@ const styles = {
     right: "-8%",
     width: 450,
     height: 450,
-    borderRadius: "50%",
     background: "radial-gradient(circle, rgba(var(--accent-purple-rgb),0.06) 0%, transparent 70%)",
     pointerEvents: "none",
   },

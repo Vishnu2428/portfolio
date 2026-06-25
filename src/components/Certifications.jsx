@@ -27,34 +27,28 @@ document.head.appendChild(certStyles);
 
 const certifications = [
   {
-    title: 'Full Stack Web Development',
-    issuer: 'Udemy',
-    year: '2024',
+    title: 'Technology Job Simulation',
+    issuer: 'Deloitte (Forage)',
+    year: 'Jul 2025',
     accent: 'var(--accent-purple)',
   },
   {
-    title: 'Java Programming Masterclass',
-    issuer: 'Coursera',
-    year: '2024',
+    title: 'Excel Skills Job Simulation',
+    issuer: 'JPMorgan Chase & Co. (Forage)',
+    year: 'Oct 2024',
     accent: 'var(--accent-blue)',
   },
   {
-    title: 'React.js Advanced Concepts',
-    issuer: 'Meta',
-    year: '2023',
+    title: 'Python Coder',
+    issuer: 'Kaggle',
+    year: 'Nov 2025',
     accent: 'var(--accent-cyan)',
   },
   {
-    title: 'Cloud Computing Fundamentals',
-    issuer: 'Google',
-    year: '2023',
+    title: 'Effective Presentations',
+    issuer: 'HP LIFE, HP Foundation',
+    year: 'Apr 2026',
     accent: 'var(--accent-green)',
-  },
-  {
-    title: 'Python for Data Science',
-    issuer: 'IBM',
-    year: '2023',
-    accent: 'var(--accent-pink)',
   },
 ];
 

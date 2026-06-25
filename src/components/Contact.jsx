@@ -6,6 +6,9 @@ import {
   FaLinkedin,
   FaMapMarkerAlt,
   FaPaperPlane,
+  FaSpinner,
+  FaCheckCircle,
+  FaExclamationCircle,
 } from "react-icons/fa";
 
 const contactInfo = [
@@ -33,8 +36,8 @@ const contactInfo = [
   {
     icon: FaMapMarkerAlt,
     label: "Location",
-    value: "Tamil Nadu, India",
-    href: null,
+    value: "256P, Ammal Lake 2nd Cross Rd, Salem, TN",
+    href: "https://www.google.com/maps?q=11.633954687423893,78.15078308109811",
     accent: "var(--accent-pink)",
   },
 ];
@@ -83,6 +86,8 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -90,14 +95,38 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent! Thank you for reaching out. I'll get back to you soon.");
-    setForm({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    const formData = new URLSearchParams();
+    formData.append("Name", form.name);
+    formData.append("Email", form.email);
+    formData.append("Subject", form.subject);
+    formData.append("Message", form.message);
+
+    fetch("https://script.google.com/macros/s/AKfycbzuytVN_ZGw9vhp2kVLZJitqTUq-MRySzLFJ9np2U0DTQkbUbNXuSm5dYlq9gHpz-xG/exec", {
+      method: "POST",
+      mode: "no-cors",
+      body: formData,
+    })
+      .then(() => {
+        setIsSubmitting(false);
+        setSubmitStatus("success");
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setSubmitStatus(null), 5000);
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        setIsSubmitting(false);
+        setSubmitStatus("error");
+        setTimeout(() => setSubmitStatus(null), 5000);
+      });
   };
 
   return (
     <section id="contact" style={styles.section}>
-      <div style={styles.bgOrb1} />
-      <div style={styles.bgOrb2} />
+      <div className="liquid-orb" style={styles.bgOrb1} />
+      <div className="liquid-orb" style={styles.bgOrb2} />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -155,12 +184,38 @@ const Contact = () => {
 
           <motion.button
             type="submit"
-            style={styles.submitBtn}
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.97 }}
+            style={{ ...styles.submitBtn, opacity: isSubmitting ? 0.7 : 1 }}
+            whileHover={!isSubmitting ? { scale: 1.03, y: -2 } : {}}
+            whileTap={!isSubmitting ? { scale: 0.97 } : {}}
+            disabled={isSubmitting}
           >
-            <FaPaperPlane style={{ marginRight: 10 }} />
-            Send Message
+            {isSubmitting ? (
+              <>
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+                  style={{ display: "flex", alignItems: "center", marginRight: 10 }}
+                >
+                  <FaSpinner />
+                </motion.div>
+                Sending...
+              </>
+            ) : submitStatus === "success" ? (
+              <>
+                <FaCheckCircle style={{ marginRight: 10, color: "#10B981" }} />
+                Sent Successfully!
+              </>
+            ) : submitStatus === "error" ? (
+              <>
+                <FaExclamationCircle style={{ marginRight: 10, color: "#EF4444" }} />
+                Failed. Try Again.
+              </>
+            ) : (
+              <>
+                <FaPaperPlane style={{ marginRight: 10 }} />
+                Send Message
+              </>
+            )}
           </motion.button>
         </motion.form>
 

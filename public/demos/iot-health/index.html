@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT Health Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111827;
+      color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background: #1f2937;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #ec4899;
+    }
+    .header h1 { margin: 0; font-size: 24px; color: #ec4899; }
+    .status {
+      background: #059669;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      text-align: center;
+      border: 1px solid #374151;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+    }
+    .card.bpm::after { background: #ef4444; }
+    .card.spo2::after { background: #3b82f6; }
+    .card.temp::after { background: #f59e0b; }
+    
+    .value { font-size: 48px; font-weight: bold; margin: 15px 0; }
+    .unit { font-size: 16px; color: #9ca3af; }
+    .label { color: #9ca3af; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .chart {
+      background: #1f2937;
+      margin: 0 30px 30px;
+      padding: 20px;
+      border-radius: 12px;
+      height: 200px;
+      border: 1px solid #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6b7280;
+    }
+    .btn {
+      background: #4b5563;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-left: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>IoT Health Monitor</h1>
+    <div class="status">● SENSOR CONNECTED</div>
+  </div>
+
+  <div class="grid">
+    <div class="card bpm">
+      <div class="label">Heart Rate</div>
+      <div class="value" id="bpmVal">72 <span class="unit">bpm</span></div>
+      <div style="color:#ef4444; font-size: 12px;">Normal Resting</div>
+    </div>
+    
+    <div class="card spo2">
+      <div class="label">Blood Oxygen (SpO2)</div>
+      <div class="value" id="spoVal">98 <span class="unit">%</span></div>
+      <div style="color:#3b82f6; font-size: 12px;">Optimal Level</div>
+    </div>
+    
+    <div class="card temp">
+      <div class="label">Body Temperature</div>
+      <div class="value" id="tempVal">36.6 <span class="unit">°C</span></div>
+      <div style="color:#f59e0b; font-size: 12px;">Stable</div>
+    </div>
+  </div>
+
+  <div class="chart">
+    [ Live ECG Data Visualization Simulation ]
+  </div>
+
+  <a href="/" class="btn">← Back to Portfolio</a>
+
+  <script>
+    // Simulate real-time data
+    setInterval(() => {
+      document.getElementById('bpmVal').innerHTML = Math.floor(70 + Math.random() * 5) + ' <span class="unit">bpm</span>';
+      document.getElementById('spoVal').innerHTML = Math.floor(97 + Math.random() * 3) + ' <span class="unit">%</span>';
+      document.getElementById('tempVal').innerHTML = (36.5 + Math.random() * 0.3).toFixed(1) + ' <span class="unit">°C</span>';
+    }, 2000);
+  </script>
+</body>
+</html>

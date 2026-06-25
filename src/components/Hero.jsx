@@ -3,8 +3,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaChevronDown, FaDownload } from 'react-icons/fa';
 
 const TYPING_STRINGS = [
-  'Full Stack Developer',
   'Java Developer',
+  'Full Stack Developer',
   'Web Developer',
   'Photographer',
   'Problem Solver',
@@ -97,10 +97,10 @@ const socialLinks = [
 ];
 
 const ORBS = [
-  { size: 300, color: 'rgba(139,92,246,0.15)', top: '10%', left: '-5%', delay: 0 },
-  { size: 200, color: 'rgba(6,182,212,0.12)', top: '60%', right: '-3%', delay: 5 },
-  { size: 250, color: 'rgba(236,72,153,0.1)', bottom: '5%', left: '30%', delay: 10 },
-  { size: 180, color: 'rgba(59,130,246,0.12)', top: '30%', right: '10%', delay: 7 },
+  { size: 300, color: 'rgba(var(--accent-purple-rgb), 0.15)', top: '10%', left: '-5%', delay: 0 },
+  { size: 200, color: 'rgba(var(--accent-cyan-rgb), 0.12)', top: '60%', right: '-3%', delay: 5 },
+  { size: 250, color: 'rgba(var(--accent-blue-rgb), 0.1)', bottom: '5%', left: '30%', delay: 10 },
+  { size: 180, color: 'rgba(var(--accent-purple-rgb), 0.12)', top: '30%', right: '10%', delay: 7 },
 ];
 
 const Hero = () => {
@@ -142,19 +142,15 @@ const Hero = () => {
       {ORBS.map((orb, i) => (
         <motion.div
           key={i}
-          className="floating-orb"
+          className="floating-orb liquid-orb"
           style={{
-            position: 'absolute',
             width: orb.size,
             height: orb.size,
-            borderRadius: '50%',
             background: orb.color,
-            filter: 'blur(80px)',
             top: orb.top,
             left: orb.left,
             right: orb.right,
             bottom: orb.bottom,
-            pointerEvents: 'none',
           }}
           animate={{
             x: [0, 50, -20, 30, 0],

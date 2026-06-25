@@ -2,33 +2,33 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaExpand, FaTimes } from "react-icons/fa";
 
-const categories = ["All", "Nature", "Architecture", "Street", "Portrait"];
+const categories = ["All", "Nature", "Portrait", "Engagement"];
 
 const photos = [
   {
-    src: "/images/photo-nature-1.png",
+    src: "/images/photo-nature-new.jpg",
     category: "Nature",
-    title: "Golden Mountain Sunset",
+    title: "Enchanting Forest Light",
   },
   {
-    src: "/images/photo-nature-2.png",
-    category: "Nature",
-    title: "Serene Lake Reflection",
+    src: "/images/photo-engagement-1.jpg",
+    category: "Engagement",
+    title: "Together Forever",
   },
   {
-    src: "/images/photo-architecture-1.png",
-    category: "Architecture",
-    title: "Modern Glass Tower",
-  },
-  {
-    src: "/images/photo-street-1.png",
-    category: "Street",
-    title: "Market Lights",
-  },
-  {
-    src: "/images/photo-portrait-1.png",
+    src: "/images/photo-model-1.jpg",
     category: "Portrait",
-    title: "Golden Hour Portrait",
+    title: "Traditional Elegance",
+  },
+  {
+    src: "/images/photo-model-2.jpg",
+    category: "Portrait",
+    title: "Golden Glow",
+  },
+  {
+    src: "/images/photo-engagement-ring.jpg",
+    category: "Engagement",
+    title: "The Perfect Ring",
   },
 ];
 
@@ -43,8 +43,8 @@ const Photography = () => {
 
   return (
     <section id="photography" style={styles.section}>
-      <div style={styles.bgOrb1} />
-      <div style={styles.bgOrb2} />
+      <div className="liquid-orb" style={styles.bgOrb1} />
+      <div className="liquid-orb" style={styles.bgOrb2} />
 
       {/* Header */}
       <motion.div

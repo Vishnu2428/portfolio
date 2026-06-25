@@ -35,12 +35,13 @@ const projects = [
     ],
     tech: ['React.js', 'Vite', 'Framer Motion', 'CSS3'],
     github: 'https://github.com/Vishnu2428/portfolio',
-    demo: '#',
+    demo: null,
     accent: 'var(--accent-purple)',
   },
   {
     title: 'Luma Photography',
-    image: '/images/photo-nature-1.png',
+    image: '/images/luma-logo.jpg',
+    imagePosition: 'center 35%',
     description:
       'A professional photography portfolio showcasing stunning visuals and galleries. Features a modern, responsive design for an elegant user experience.',
     features: [
@@ -67,7 +68,7 @@ const projects = [
     ],
     tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
     github: '#',
-    demo: '#',
+    demo: '/demos/recipe-lens/index.html',
     accent: 'var(--accent-purple)',
   },
   {
@@ -83,7 +84,7 @@ const projects = [
     ],
     tech: ['React.js', 'Python', 'Flask', 'MongoDB'],
     github: '#',
-    demo: '#',
+    demo: '/demos/internship/index.html',
     accent: 'var(--accent-blue)',
   },
   {
@@ -99,7 +100,7 @@ const projects = [
     ],
     tech: ['ESP32', 'Arduino', 'ThingSpeak', 'Blynk'],
     github: '#',
-    demo: null,
+    demo: '/demos/iot-health/index.html',
     accent: 'var(--accent-pink)',
   },
 ];
@@ -269,6 +270,7 @@ const ProjectCard = ({ project, index }) => {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
+              objectPosition: project.imagePosition || 'center',
               display: 'block',
             }}
             animate={hovered ? { scale: 1.08 } : { scale: 1 }}

@@ -68,6 +68,21 @@
 
 /* ——— LIGHT THEME ——— */
 [data-theme="light"] {
+  /* Darker Gold Accents for better contrast on white background */
+  --accent-purple-rgb: 153, 122, 0;   /* Dark Gold */
+  --accent-blue-rgb: 139, 101, 8;     /* Bronze */
+  --accent-cyan-rgb: 166, 125, 61;    /* Ochre */
+  --accent-pink-rgb: 102, 80, 0;      /* Deep Bronze */
+  --accent-green-rgb: 120, 95, 0;
+  --accent-orange-rgb: 89, 70, 0;
+
+  --accent-purple: rgb(var(--accent-purple-rgb));
+  --accent-blue: rgb(var(--accent-blue-rgb));
+  --accent-cyan: rgb(var(--accent-cyan-rgb));
+  --accent-pink: rgb(var(--accent-pink-rgb));
+  --accent-green: rgb(var(--accent-green-rgb));
+  --accent-orange: rgb(var(--accent-orange-rgb));
+
   --bg-primary: #FAF9F6;      /* Off-white Ivory */
   --bg-secondary: #FFFFFF;    /* Pure White */
   --bg-tertiary: #F3F2EC;     /* Warm Alabaster */
@@ -2149,4 +2164,31 @@ section:nth-child(odd) {
   section:nth-child(odd) {
     animation: none !important;
   }
+}
+
+/* ——— LIQUID GLASS UI UTILITIES ——— */
+
+@keyframes liquidMorph {
+  0% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  34% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+  }
+  100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+}
+
+.liquid-orb {
+  position: absolute;
+  filter: blur(60px);
+  animation: liquidMorph 15s ease-in-out infinite;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.5s ease;
 }

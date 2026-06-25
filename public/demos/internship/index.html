@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Internship Matcher</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      width: 100%;
+      background: #1e293b;
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 2px solid #3b82f6;
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+    }
+    .panel {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #334155;
+    }
+    h2 { color: #3b82f6; margin-top: 0; }
+    .skill-tag {
+      background: #3b82f640;
+      color: #93c5fd;
+      padding: 5px 12px;
+      border-radius: 20px;
+      display: inline-block;
+      margin: 5px;
+      font-size: 14px;
+    }
+    .match-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border-left: 4px solid #3b82f6;
+    }
+    .match-card h4 { margin: 0 0 5px 0; color: #f8fafc; }
+    .match-card p { margin: 0; color: #94a3b8; font-size: 14px; }
+    .score {
+      float: right;
+      background: #10b981;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .btn {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="margin:0; color:#60a5fa;">AI Internship Recommendation Engine</h1>
+  </header>
+
+  <div class="container">
+    <div class="dashboard">
+      <div class="panel">
+        <h2>Student Profile</h2>
+        <p><strong>Name:</strong> Alex Doe</p>
+        <p><strong>Major:</strong> Computer Science</p>
+        <p><strong>CGPA:</strong> 3.8/4.0</p>
+        <h3 style="color:#94a3b8; font-size: 16px; margin-top:20px;">Analyzed Skills</h3>
+        <div>
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">MongoDB</span>
+        </div>
+        <button class="btn" style="width:100%;">Update Profile</button>
+      </div>
+
+      <div class="panel">
+        <h2>AI Top Matches</h2>
+        <p style="color:#94a3b8; margin-top:-10px; margin-bottom:20px;">Based on semantic skill matching & career goals</p>
+        
+        <div class="match-card">
+          <span class="score">98% Match</span>
+          <h4>Frontend Engineering Intern</h4>
+          <p>TechNova Solutions • San Francisco, CA (Remote)</p>
+          <p style="margin-top:8px; color:#64748b;">Matching skills: React.js, UI/UX, JavaScript</p>
+        </div>
+
+        <div class="match-card">
+          <span class="score">92% Match</span>
+          <h4>Data Science Intern</h4>
+          <p>Global Analytics Inc. • New York, NY</p>
+          <p style="margin-top:8px; color:#64748b;">Matching skills: Python, Machine Learning, Data Processing</p>
+        </div>
+
+        <div class="match-card">
+          <span class="score">85% Match</span>
+          <h4>Full Stack Developer Intern</h4>
+          <p>Startup Hub • Austin, TX</p>
+          <p style="margin-top:8px; color:#64748b;">Matching skills: React.js, Python, MongoDB</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="/" class="btn" style="background: #475569;">← Back to Portfolio</a>
+    </div>
+  </div>
+</body>
+</html>

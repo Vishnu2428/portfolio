@@ -365,7 +365,7 @@ const About = () => {
                 >
                   CGPA
                 </span>
-                <AnimatedCounter target={8.5} decimals={1} duration={2000} />
+                <AnimatedCounter target={8.0} decimals={1} duration={2000} />
               </div>
             </div>
           </TiltCard>

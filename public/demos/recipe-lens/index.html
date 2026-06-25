@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Lens - AI Food Recognition</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1a1a24;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      padding: 40px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    h1 {
+      color: #a855f7;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #aaa;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .upload-box {
+      border: 2px dashed #a855f7;
+      padding: 50px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .upload-box:hover {
+      background: rgba(168, 85, 247, 0.1);
+    }
+    .btn {
+      background: #a855f7;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.3s;
+    }
+    .btn:hover {
+      opacity: 0.8;
+    }
+    .results {
+      margin-top: 30px;
+      text-align: left;
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+    }
+    .results.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Recipe Lens Interactive Demo</h1>
+    <p>Upload a photo of any food item, and our AI model will recognize it and provide recipe suggestions, nutritional info, and ingredients.</p>
+    
+    <div class="upload-box" id="uploadBox">
+      <h3>📷 Click here to upload an image of food</h3>
+      <p style="margin-bottom:0;">(or just click to simulate an upload)</p>
+    </div>
+
+    <div class="results" id="resultsBox">
+      <h3 style="color: #4ade80;">✅ Detected: Grilled Salmon & Asparagus</h3>
+      <p><strong>Confidence:</strong> 98.5%</p>
+      <p><strong>Calories:</strong> 450 kcal</p>
+      <p><strong>Ingredients:</strong> Salmon fillet, Asparagus, Olive oil, Lemon, Garlic, Salt, Pepper.</p>
+      <button class="btn">View Full Recipe</button>
+    </div>
+
+    <br>
+    <a href="/" class="btn" style="background: #4b5563; margin-top: 20px;">← Back to Portfolio</a>
+  </div>
+
+  <script>
+    document.getElementById('uploadBox').addEventListener('click', () => {
+      document.getElementById('uploadBox').innerHTML = '<h3>⏳ Analyzing image using AI...</h3>';
+      setTimeout(() => {
+        document.getElementById('uploadBox').style.display = 'none';
+        document.getElementById('resultsBox').classList.add('active');
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
