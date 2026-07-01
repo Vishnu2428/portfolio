@@ -432,12 +432,16 @@ const styles = {
     fontWeight: 600,
     textDecoration: "none",
     transition: "color 0.2s ease",
+    wordBreak: "break-word",
+    overflowWrap: "anywhere",
   },
   infoValueText: {
     fontSize: "0.95rem",
     color: "var(--text-primary)",
     fontWeight: 600,
     margin: 0,
+    wordBreak: "break-word",
+    overflowWrap: "anywhere",
   },
 };
 

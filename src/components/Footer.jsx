@@ -31,6 +31,7 @@ const Footer = () => {
       <div style={styles.separator} />
 
       <motion.div
+        className="footer-content"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -100,6 +101,22 @@ const Footer = () => {
           <FaHeart style={styles.heartIcon} /> 
         </p>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .footer-content {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+            text-align: center !important;
+          }
+          .footer-content > div {
+            align-items: center !important;
+          }
+          .footer-content nav {
+            align-items: center !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 };
