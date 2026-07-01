@@ -48,15 +48,16 @@ const Experience = () => {
         </p>
       </motion.div>
 
-      <div style={styles.timeline}>
+      <div className="experience-timeline" style={styles.timeline}>
         {/* Central line */}
-        <div style={styles.line} />
+        <div className="experience-line" style={styles.line} />
 
         {experiences.map((exp, index) => {
           const isLeft = index % 2 === 0;
           return (
             <motion.div
               key={index}
+              className={`experience-item ${isLeft ? "left" : "right"}`}
               initial={{ opacity: 0, x: isLeft ? -80 : 80 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -71,12 +72,13 @@ const Experience = () => {
               }}
             >
               {/* Dot on the line */}
-              <div style={styles.dot}>
+              <div className="experience-dot" style={styles.dot}>
                 <div style={styles.dotInner} />
               </div>
 
               {/* Card */}
               <motion.div
+                className="experience-card"
                 whileHover={{
                   y: -4,
                   boxShadow: "0 20px 60px rgba(99,102,241,0.12)",
@@ -105,11 +107,26 @@ const Experience = () => {
         })}
       </div>
 
-      {/* Inject responsive CSS */}
+      {/* Responsive CSS for Mobile Timeline */}
       <style>{`
         @media (max-width: 768px) {
-          #experience [data-timeline-line] {
-            left: 20px !important;
+          .experience-line {
+            left: 16px !important;
+            transform: none !important;
+          }
+          .experience-item {
+            justify-content: flex-start !important;
+            padding-left: 45px !important;
+            box-sizing: border-box !important;
+          }
+          .experience-dot {
+            left: 16px !important;
+            transform: translateX(-50%) !important;
+          }
+          .experience-card {
+            width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
           }
         }
       `}</style>
