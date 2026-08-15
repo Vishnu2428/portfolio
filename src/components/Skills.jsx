@@ -38,7 +38,7 @@ const TECHNICAL_SKILLS = [
   { name: 'CSS3', level: 75 },
   { name: 'JavaScript', level: 70 },
   { name: 'React.js', level: 65 },
-  { name: 'MySQL', level: 55 },
+  { name: 'MySQL', level: 45 },
 ];
 
 const SOFT_SKILLS = [
