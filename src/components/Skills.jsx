@@ -29,8 +29,8 @@ const ACCENT_COLORS = [
 
 const TECHNICAL_SKILLS = [
   { name: 'Git & GitHub', level: 100 },
-  { name: 'Java', level: 90 },
-  { name: 'Python', level: 88 },
+  { name: 'Java', level: 50 },
+  { name: 'Python', level: 70 },
   { name: 'C Program', level: 85 },
   { name: 'MongoDB', level: 83 },
   { name: 'Firebase', level: 81 },
